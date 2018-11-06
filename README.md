@@ -10,3 +10,6 @@ dependencies:
 
  ActivityScope:
  1. 等同于Singleton,但是可以额外添加新的注解来标识具体使用场景或者用途
+
+
+Dagger2 扩展库的使用
