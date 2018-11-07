@@ -3,6 +3,9 @@ package kn.dagger2
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import kn.dagger2.di.AppComPonent
+import kn.dagger2.di.DaggerAppComPonent
+import kn.dagger2.di.UserModule
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
@@ -26,7 +29,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        MyApp.appComPonent!!.injectMainActivity(this)
+//        MyApp.appComPonent!!.injectMainActivity(this)
+        DaggerAppComPonent.builder()
+                .build()
+                .injectMainActivity(this)
         println(LOG + user.hashCode())
         println(LOG + "presenter:" + presenter.hashCode())
         initView();

@@ -1,7 +1,6 @@
 package kn.dagger2.di
 
 import dagger.Component
-import dagger.android.AndroidInjectionModule
 import kn.dagger2.ActivityScope
 import kn.dagger2.HttpModule
 import kn.dagger2.MainActivity
@@ -19,7 +18,7 @@ import kn.dagger2.SecActivity
  *   有scope的component是可以依赖没有scope的compnent;
  *    version: 1.0
  */
-@Component(modules = arrayOf(UserModule::class,HttpModule::class,AndroidInjectionModule::class), dependencies = [PresenterComponent::class])
+@Component(modules = arrayOf(UserModule::class,HttpModule::class), dependencies = [PresenterComponent::class])
 @ActivityScope
 interface AppComPonent {
     fun injectMainActivity(mainActivity: MainActivity)

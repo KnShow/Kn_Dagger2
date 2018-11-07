@@ -13,7 +13,7 @@ import kn.dagger2.User
  *    version: 1.0
  */
 @Module
-class UserModule {
+class   UserModule {
     @Provides
     @ActivityScope
     fun getUser(): User {
